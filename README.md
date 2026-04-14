@@ -1,4 +1,4 @@
-# xApp-to-xApp Communication in O-RAN through RMR (RTS Demo)
+# xApp-to-xApp Communication in O-RAN through RMR (RTS based)
 
 <img width="511" height="635" alt="xAPP-xAPP-RMR - With RTS" src="https://github.com/user-attachments/assets/2109a936-7dea-43bf-9a90-4907ddf5e7a4" />
 
@@ -15,16 +15,16 @@ The demo runs inside a Kubernetes-based Near-RT RIC environment using two xApps 
 
 This repository is intentionally different from the **type-based routing** version.
 
-### Type-based routing demo
-- request route is explicit: `mtype=10000 -> hello-b`
-- reply route is also explicit: `mtype=10001 -> hello`
-- bidirectional flow depends on a predefined static return route
+### Type-based routing
+- Request route is explicit: `mtype=10000 -> hello-b`
+- Reply route is also explicit: `mtype=10001 -> hello`
+- Bidirectional flow depends on a predefined static return route
 
-### RTS demo (this repo)
-- request route is explicit: `mtype=10000 -> hello-b`
-- reply route is **not explicitly mapped back to `hello`**
+### RTS-based 
+- Request route is explicit: `mtype=10000 -> hello-b`
+- Reply route is **not explicitly mapped back to `hello`**
 - `hello-b` uses **`rmr_rts_msg()`** to return the response to the original sender
-- reply delivery depends on the sender identity carried in the incoming RMR message, exposed in this demo as:
+- Reply delivery depends on the sender identity carried in the incoming RMR message, exposed in this demo as:
 
 ```text
 src=hello.ricxapp:4560
