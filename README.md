@@ -141,6 +141,7 @@ PONG RTS sent: mtype=10001 state=0 tp_state=0
 PING received: mtype=10000 payload={"type": "ping", "seq": 2} src=hello.ricxapp:4560 state=0 tp_state=0
 PONG RTS sent: mtype=10001 state=0 tp_state=0
 ```
+The `src=hello.ricxapp:4560` field shows the sender identity embedded in the message, which is used by RMR Return-To-Sender (RTS) to automatically route the response back to the originating xApp.
 
 ## Why RTS matters
 
